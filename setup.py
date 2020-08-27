@@ -9,11 +9,11 @@ with open("README.md", "r") as readme_file:
 
 
 setup(
-    name = 'stapler',
+    name = 'pystapler',
     version = __version__,
     author = 'Adam Moyer',
     author_email = 'atom.moyer@gmail.com',
-    description = 'A Motif Hash Based Method for Matching Crosslinkers into Peptides and Proteins',
+    description = 'A Motif Hash Based Method for Matching Staples/Crosslinks into Peptides and Proteins',
     packages = ['stapler'],
     package_dir={'stapler' : 'stapler'},
     package_data={'stapler' : ['hash_tables']},
@@ -22,7 +22,7 @@ setup(
     zip_safe = False,
     long_description=readme,
     long_description_content_type='text/markdown',
-    url="https://github.com/atom-moyer/getpy",
+    url='https://github.com/atom-moyer/stapler',
     classifiers=[
         'Programming Language :: Python :: 3',
         'Programming Language :: C++',
