@@ -19,7 +19,7 @@ ab_residue_selectors = [ChainSelector('A'), ChainSelector('B')]
 aa_or_ab_residue_selectors = [ChainSelector('A'), ChainSelector('A,B')]
 
 native_disulfide_stapler = NativeDisulfideStapler(
-    residue_selectors=ab_residue_selectors,
+    residue_selectors=default_residue_selectors,
     minimum_sequence_distance=4
 )
 
