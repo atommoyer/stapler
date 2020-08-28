@@ -1,9 +1,5 @@
 import glob
 import os
-import shutil
-
-def filename(path):
-    return
 
 import pyrosetta
 pyrosetta.init()
