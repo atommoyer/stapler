@@ -1,5 +1,5 @@
 # stapler
-A Motif Hash Based Method for Matching Crosslinkers into Peptides and Proteins
+A Motif Hash Based Method for Matching Crosslinkers into Peptides and Proteins for PyRosetta
 
 ### Installation
 `pip install pystapler`
