@@ -1,5 +1,5 @@
 # stapler
-A Motif Hash Based Method for Matching Crosslinkers into Peptides and Proteins
+A Motif Hash Based Method for Matching Crosslinkers into Peptides and Proteins for PyRosetta
 
 ### Installation
 `pip install pystapler`
@@ -28,3 +28,5 @@ pose = pyrosetta.pose_from_file('input.pdb')
 for i, stapled_pose in enumerate(native_disulfide_stapler.apply(pose)):
     stapled_pose.dump_pdb(f'output_{i}.pdb')
 ```
+
+![Protein/Disulfide Example Image](/image1.png)
