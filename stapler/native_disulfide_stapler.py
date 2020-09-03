@@ -31,8 +31,8 @@ class NativeDisulfideStapler(Stapler):
 
     def decode(self, i, j, data):
         return (
-            (i, 'CYS', (np.array([data]).view(np.dtype('i2'))[0]*10.0,)),
-            (j, 'CYS', (np.array([data]).view(np.dtype('i2'))[1]*10.0,))
+            (i, 'CYS', (np.array([data]).view(np.dtype('i2'))[0]*30.0,)),
+            (j, 'CYS', (np.array([data]).view(np.dtype('i2'))[1]*30.0,))
         )
 
 
