@@ -11,7 +11,7 @@ To achieve this goal, examples of 30,000 native disulfide structures were procur
 
 Therefore, when you have a candidate protein structure and you would like to know if any residue pairs from the structure can accomidate a disulfide, you can quickly calculate all of the relative positions of backbone atoms in the protein and ask which transformations are the same as an example in the database of native examples.
 
-The protocol is scalable/adaptable to other crosslinker given a set of conformations of the new crosslinker. For disulfides, this was given by the PDB, but for crosslinks that do not have a native examples, the examples must be generated from scratch. Also, this protocol is not limited to sidechain-to-sidechain crosslinking. One could implement loop closure instead with some minor tweaks.
+The protocol is scalable/adaptable to other crosslinker given a set of conformations of the new crosslinker. For disulfides, this was given by the PDB, but for crosslinks that do not have a native examples, the examples must be generated from scratch. Also, this protocol is not limited to sidechain-to-sidechain crosslinking. One could implement loop closure with some tweaks.
 
 ![Theory Example Image](/image2.png)
 
