@@ -13,7 +13,7 @@ Therefore, when you have a candidate protein structure and you would like to kno
 
 The protocol is scalable/adaptable to other crosslinker given a set of conformations of the new crosslinker. For disulfides, this was given by the PDB, but for crosslinks that do not have a native examples, the examples must be generated from scratch. Also, this protocol is not limited to sidechain-to-sidechain crosslinking. One could implement loop closure instead with some minor tweaks.
 
-![Protein/Disulfide Example Image](/image1.png)
+![Theory Example Image](/image2.png)
 
 ### Example
 ```python
@@ -40,4 +40,4 @@ for i, stapled_pose in enumerate(native_disulfide_stapler.apply(pose)):
     stapled_pose.dump_pdb(f'output_{i}.pdb')
 ```
 
-
+![Protein/Disulfide Example Image](/image1.png)
