@@ -1,8 +1,19 @@
 # stapler
-A Motif Hash Based Method for Matching Crosslinkers into Peptides and Proteins for PyRosetta
+A Hash Based Method for Matching Crosslinkers into Peptides and Proteins for PyRosetta
 
 ### Installation
 `pip install pystapler`
+
+### Theory
+This protocol is developed to quickly identify pairs of residues that can accomidate disulfides given the 3D structure of a protein. 
+
+To achieve this goal, examples of 30,000 native disulfide structures were procured from the PDB, and the relative positions of the backbone atoms (N, CA, C) were calculated, hashed, and stored into a database.
+
+Therefore, when you have a candidate protein structure and you would like to know if any residue pairs from the structure can accomidate a disulfide, you can quickly calculate all of the relative positions of backbone atoms in the protein and ask which transformations are the same as an example in the database of native examples.
+
+The protocol is scalable/adaptable to other crosslinker given a set of conformations of the new crosslinker. For disulfides, this was given by the PDB, but for crosslinks that do not have a native examples, the examples must be generated from scratch. Also, this protocol is not limited to sidechain-to-sidechain crosslinking. One could implement loop closure instead with some minor tweaks.
+
+![Protein/Disulfide Example Image](/image1.png)
 
 ### Example
 ```python
@@ -29,4 +40,4 @@ for i, stapled_pose in enumerate(native_disulfide_stapler.apply(pose)):
     stapled_pose.dump_pdb(f'output_{i}.pdb')
 ```
 
-![Protein/Disulfide Example Image](/image1.png)
+
