@@ -40,8 +40,8 @@ class Stapler(object):
 
 
     def apply(self, pose):
-        xyzs_a = np.array([[residue.atom(atom).xyz() for atom in self.atom_selectors[0]] for residue in pose.residues])
-        xyzs_b = np.array([[residue.atom(atom).xyz() for atom in self.atom_selectors[0]] for residue in pose.residues])
+        xyzs_a = np.array([[residue.atom(atom).xyz() for atom in self.atom_selectors[0]] for residue in pose.residues if not residue.is_virtual_residue()])
+        xyzs_b = np.array([[residue.atom(atom).xyz() for atom in self.atom_selectors[0]] for residue in pose.residues if not residue.is_virtual_residue()])
 
         sele = np.array([
             [i, j] for i, j in itertools.product(np.argwhere(self.residue_selectors[0].apply(pose)), np.argwhere(self.residue_selectors[1].apply(pose)))
