@@ -4,11 +4,11 @@ import pkg_resources
 import numpy as np
 import getpy as gp
 
-import homog
 import xbin
 
 from pyrosetta.rosetta.core.select.residue_selector import TrueResidueSelector
 
+from .homog import hstub
 
 class Stapler(object):
     def __init__(
@@ -51,11 +51,11 @@ class Stapler(object):
         sele_a = np.squeeze(sele[:,0])
         sele_b = np.squeeze(sele[:,1])
 
-        stubs_a = homog.hstub(xyzs_a[sele_a,0,:], xyzs_a[sele_a,1,:], xyzs_a[sele_a,2,:])
-        stubs_b = homog.hstub(xyzs_b[sele_b,0,:], xyzs_b[sele_b,1,:], xyzs_b[sele_b,2,:])
+        stubs_a = hstub(xyzs_a[sele_a,0,:], xyzs_a[sele_a,1,:], xyzs_a[sele_a,2,:])
+        stubs_b = hstub(xyzs_b[sele_b,0,:], xyzs_b[sele_b,1,:], xyzs_b[sele_b,2,:])
 
-        xforms_ab = homog.hinv(stubs_a) @ stubs_b
-        xforms_ba = homog.hinv(stubs_b) @ stubs_a
+        xforms_ab = np.linalg.inv(stubs_a) @ stubs_b
+        xforms_ba = np.linalg.inv(stubs_b) @ stubs_a
 
         keys_ab = self.hash_function.get_bin_index(xforms_ab)
         keys_ba = self.hash_function.get_bin_index(xforms_ba)
